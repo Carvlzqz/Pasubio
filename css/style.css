@@ -58,12 +58,12 @@
   box-shadow:10px 5px 5px rgba(0,0,0,0.4);
 }
 .navTablas {
-  background-image: url("/img/surf.jpg");
+  background-image: url("../img/surf.jpg");
   
 }
 
 .navRopa {
-  background-image: url("/img/indumentaria.jpg");
+  background-image: url("../img/indumentaria.jpg");
   background-size: contain;
   background-position: center;
   display: flex;
@@ -83,7 +83,7 @@
 }
 
 .navAccesorios {
-  background-image: url("/img/accesorios\ \(2\).jpg");
+  background-image: url("../img/accesorios-2.jpg");
   background-size: contain;
   background-position: center;
   display: flex;
