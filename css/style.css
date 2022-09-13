@@ -156,3 +156,65 @@ form{
   font-size: 0.8em;
 }
   
+
+/*ESTILOS FORMULARIO LOGIN*/
+.body-login{
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-form{
+  border: 3px solid rgb(28, 40, 202);
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  box-shadow:  10px 5px 5px rgba(0,0,0,0.4)
+}
+
+.logo-login{
+  height: 100%;
+  opacity: 95%;
+}
+
+.formulario-login{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formulario-login h2{
+font-family: 'Smooch', cursive;
+font-size: 65px;
+color: #123cb0;
+margin-bottom: 0px;
+}
+
+.formulario-login a{
+  margin-top: 10px;
+  width: 100%;
+}
+
+.campo-form{
+  margin-top: 5px;
+  box-shadow:  10px 5px 5px rgba(0,0,0,0.1);
+  border: 1px solid black;
+}
+
+.contenedor-botonlogin{
+  text-align: center;
+  margin-top: 15px;
+  
+}
+
+.boton-login{
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+  padding: 5px 40px;
+  background-color: #2e4dd7;
+  border-radius: 5px;
+}
