@@ -165,7 +165,7 @@ form{
 
 .contenedor-form{
   border: 3px solid rgb(28, 40, 202);
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 40px;
   width: 70%;
@@ -176,7 +176,7 @@ form{
 
 .logo-login{
   height: 100%;
-  opacity: 95%;
+  border-radius: 5px;
 }
 
 .formulario-login{
@@ -196,12 +196,13 @@ margin-bottom: 0px;
 .formulario-login a{
   margin-top: 10px;
   width: 100%;
+  text-align: center;
 }
 
 .campo-form{
   margin-top: 5px;
   box-shadow:  10px 5px 5px rgba(0,0,0,0.1);
-  border: 1px solid black;
+  width: 100%;
 }
 
 .contenedor-botonlogin{
@@ -217,4 +218,10 @@ margin-bottom: 0px;
   padding: 5px 40px;
   background-color: #2e4dd7;
   border-radius: 5px;
+}
+
+.campo-login{
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
