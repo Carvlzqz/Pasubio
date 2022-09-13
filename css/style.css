@@ -163,7 +163,7 @@ form {
   color: crimson;
   font-size: 0.8em;
 }
-/* Incia la Main pagina*/
+/* Incia la Main pagina de Tablas*/
 .catalogo-tablas {
   display: flex;
   flex-wrap: wrap;
@@ -201,7 +201,26 @@ td li {
   text-align: start;
 }
 
+/* Incia la Main pagina de Indumentaria*/
+.catalogo-ropa {
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: scale-down;
+  width: 80%;
+  width: fit-content;
+}
+.imagenes-catalogo-ropa {
+  width: 17.5rem;
+  height: 18.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  width: 25rem;
+  height: 31.25rem;
+  gap: 1.25rem;
+}
+
 /*ESTILOS FORMULARIO LOGIN*/
+
 .body-login {
   display: flex;
   justify-content: center;
