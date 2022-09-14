@@ -210,13 +210,30 @@ td li {
   width: fit-content;
 }
 .imagenes-catalogo-ropa {
-  width: 17.5rem;
-  height: 18.75rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   width: 25rem;
   height: 31.25rem;
   gap: 1.25rem;
+}
+/* Incia la Main pagina de Accesorios*/
+.catalogo-accesorios {
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: scale-down;
+  width: 80%;
+  width: fit-content;
+}
+.imagenes-catalogo-accesorios {
+  width: 12.5rem;
+  height: 12.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  gap: 1.25rem;
+}
+.catalogo-ropa li,
+.catalogo-accesorios li {
+  list-style: none;
 }
 
 /*ESTILOS FORMULARIO LOGIN*/
