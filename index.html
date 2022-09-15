@@ -42,20 +42,87 @@
       </div>
     </header>
 
-    <!-- <nav class="nav-bar">
-      <a href="">Hombre</a>
-      <a href="">Mujer</a>
-      <a href="">Login</a>
-    </nav> -->
+    <nav class="nav-bar">
+      <a href="index.html">Home</a>
+      <a href="tablas.html">Tablas</a>
+      <a href="indumentaria.html">Ropa</a>
+      <a href="accesorios.html">Accesorios</a>
+    </nav>
+    <main>
+      
+        <h1>
+          Dale un respiro a tu corazon, practica surf y disfruta el momento!
+        </h1>
 
-    <div class="contenedor">
-      <a href="tablas.html" class="btnImagen navTablas">Tablas de Surf</a>
-      <a href="indumentaria.html" class="btnImagen navRopa">Ropa de Surf</a>
-      <a href="accesorios.html" class="btnImagen navAccesorios"
-        >Accesorios de Surf</a
-      >
+        <p>
+          En esta página encontrarás todo lo necesario para el surf y todos los
+          deportes acuáticos: tablas de surf, neoprenos surf, tablas de paddle
+          surf hinchables, quillas para tu tabla de surf y todo los accesorios
+          para practicar cualquier deporte en el agua.
+        </p>
+        <h2>La vida es mejor en el Mar.</h2>
+        <img src="./img/1.png" class="imagen-main" alt="logo pasubio surf" />
+    
+
+      <div class="contenedor">
+        <a href="tablas.html" class="btnImagen navTablas">Tablas de Surf</a>
+        <a href="indumentaria.html" class="btnImagen navRopa">Ropa de Surf</a>
+        <a href="accesorios.html" class="btnImagen navAccesorios"
+          >Accesorios de Surf</a
+        >
+      </div>
+    </main>
+    <!-- Aca va a ir el contenido principal Contacto -->
+    <div class="contacto">
+      <h3>Contacto</h3>
+
+      <form>
+        <div class="formInput">
+          <label for="nombre"
+            >Nombre: <span class="obligatoria">(*)</span></label
+          >
+          <input type="text" id="nombre" required />
+        </div>
+
+        <div class="formInput">
+          <label for="email">Email: <span class="obligatoria">(*)</span></label>
+          <input type="email" id="email" required pattern=".+@.+\.com" />
+        </div>
+
+        <div class="formInput">
+          <label for="telefono"
+            >Telefono: <span class="obligatoria">(*)</span></label
+          >
+          <input
+            type="tel"
+            id="telefono"
+            required
+            pattern="[0-9]{11}"
+            maxlength="11"
+          />
+        </div>
+
+        <!-- Inicio de radio -->
+        <fieldset>
+          <legend>Motivo de contacto</legend>
+          <div>
+            <input
+              type="radio"
+              id="ventas"
+              name="motivo"
+              value="ventas"
+              checked
+            />
+            <label for="ventas">Asistencia con mis compras</label>
+          </div>
+
+          <div>
+            <input type="radio" id="otro" name="motivo" value="otro" />
+            <label for="otro">Otro</label>
+          </div>
+        </fieldset>
+      </form>
     </div>
-
     <footer>
       <img
         src="./img/logotipo-de-instagram.png"
@@ -63,7 +130,7 @@
         alt="Instagram"
       />
       <img src="./img/whatsapp.png" class="logo-footer" alt="Whatsapp" />
-      <a href="contacto.html" class="logo-footer">
+      <a href="index.html" class="logo-footer">
         <img src="./img/email.png" class="logo-footer" alt="email" />
       </a>
     </footer>

@@ -76,16 +76,43 @@
 }
 /* #endregion navHome */
 
+h1 {
+  font-style: italic;
+  color: darkgreen;
+}
+p {
+  font-size: large;
+  font-weight: bold;
+}
+h2 {
+  font-style: italic;
+  color: darkslateblue;
+}
+.imagen-main {
+  width: 18.75rem;
+  height: 18.75rem;
+  border-radius: 1.25rem;
+  box-shadow: 0.625rem 0.3125rem 0.3125rem rgba(0, 0, 0, 0.4);
+}
 .pie {
   background-color: #00ccff;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /*
 .contenedor > div {
   flex-grow: 1
 }
 */
 
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* ESTILOS DEL FOOTER*/
 
 footer {
@@ -94,12 +121,11 @@ footer {
     rgba(85, 88, 218, 1) 0%,
     rgba(95, 209, 249, 1) 100.2%
   );
-  width: 100%;
   padding-top: 1.25rem;
-  box-sizing: border-box;
+  border-radius: 0.625rem;
+  width: 100%;
   display: flex;
   justify-content: center;
-  border-radius: 0.625rem;
 }
 
 .logo-footer {
