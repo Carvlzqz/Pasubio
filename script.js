@@ -29,12 +29,12 @@ changeTextButton.addEventListener('click' , ()=> {
 window.addEventListener('load', refreshCaptcha);
 
 submitButton.addEventListener('click', ()=>{
-    let valor = document.getElementById('#userCaptcha').input
+    let valor = input.value;
     if(valor == '') {
         alert('Ingresa el codigo de la imagen') ;
     }
-    else if(valor === codigo.textContent) {
-        alert('Valid input') ;
+    else if(valor === codigo) {
+        alert('CORRECTO!') ;
     }
     else {
         alert('Codigo incorrecto !') ;
