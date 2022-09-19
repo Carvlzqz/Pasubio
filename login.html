@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Gauchito Git</title>
     <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Qwitcher+Grypen&family=Smooch&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -75,9 +76,27 @@
                     <a href="#">Registrarse</a>
 
                 </form>
-            </div>
 
+                <div class="captcha-container">
+                    <div class="header-captcha">Security Check</div>
+                    <div class="securityCode">
+                        <div>
+                        <p id="codigo"> </p>
+                    </div>
+                        <span class="changeText">                            
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </span>
+                        
+                    </div>
+                    <div class="userInput">
+                        <input id="userCaptcha" type="text" placeholder="Type the text here" >
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
+        
     </div>
 
     <footer>
@@ -89,5 +108,7 @@
         <img src="./img/whatsapp.png" class="logo-footer" alt="Whatsapp" />
         <a href="index.html" class="logo-footer"><img src="./img/email.png" class="logo-footer" alt="email"/>
     </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
