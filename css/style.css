@@ -1,4 +1,4 @@
-*{
+div, header, main, footer, nav, body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +19,6 @@
   display: flex;
   justify-content: space-around;
   font-size: 1.25rem;
-  margin-top: 0.3125rem;
   padding: 1.25rem;
   background: #757f9a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -332,7 +331,13 @@ ul {
   text-align: center;
   color: white;
   font-weight: 700;
-  padding: 3px;
+  padding: .1875rem;
+}
+.fail{
+  background-color: crimson;
+}
+.success{
+  background-color: greenyellow;
 }
 
 .securityCode{
@@ -340,18 +345,18 @@ ul {
   justify-content: space-between;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: .625rem;
   background-color: white;
-  border: 1px solid gray;
+  border: .0625rem solid gray;
   position: relative;
-  letter-spacing: 2px;
+  letter-spacing: .125rem;
 }
 .securityCode p {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .fa-solid{
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .fa-solid:hover{
