@@ -1,8 +1,4 @@
 "use strict";
-const changeTextButton = document.querySelector(".changeText");
-const input = document.querySelector(".userInput input");
-const submitButton = document.querySelector(".btn");
-const codigo = document.querySelector("#codigo");
 
 function obtenerValoresAleatorios(listaValores) {
   return listaValores[Math.floor(Math.random() * listaValores.length)];
@@ -82,21 +78,46 @@ function createCaptcha() {
 }
 
 function refreshCaptcha() {
+  const codigo = document.querySelector("#codigo");
   codigo.textContent = createCaptcha();
 }
-
-changeTextButton.addEventListener("click", refreshCaptcha);
 window.addEventListener("load", refreshCaptcha);
 
-submitButton.addEventListener("click", () => {
-  let valor = input.value;
-  let headerCaptcha = document.querySelector(".header-captcha");
-  // console.log(`input:${valor} - captcha:${codigo.textContent} - son iguales? ${valor === codigo}`);
-  headerCaptcha.classList.remove("fail");
-  headerCaptcha.classList.remove("success");
-  if (valor === codigo.textContent) {
-    headerCaptcha.classList.add("success");
-  } else if (valor !== "") {
-    headerCaptcha.classList.add("fail");
+function refreshCaptchaEvento() {
+  const refreshCaptchaBoton = document.querySelector("#refreshCaptcha");
+  if (refreshCaptchaBoton) {
+    refreshCaptchaBoton.addEventListener("click", refreshCaptcha);
   }
-});
+}
+refreshCaptchaEvento();
+
+function submitCaptchaEvento() {
+  const submitCaptchaBoton = document.querySelector("#submitCaptcha");
+  if (submitCaptchaBoton) {
+    submitCaptchaBoton.addEventListener("click", () => {
+      const input = document.querySelector(".userInput input");
+      const codigo = document.querySelector("#codigo");
+      let valor = input.value;
+      let headerCaptcha = document.querySelector(".header-captcha");
+
+      headerCaptcha.classList.remove("fail");
+      headerCaptcha.classList.remove("success");
+      if (valor === codigo.textContent) {
+        headerCaptcha.classList.add("success");
+      } else if (valor !== "") {
+        headerCaptcha.classList.add("fail");
+      }
+    });
+  }
+}
+submitCaptchaEvento();
+
+function submitLogin() {
+  const loginForm = document.querySelector("#login");
+  if (loginForm) {
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+  }
+}
+submitLogin();

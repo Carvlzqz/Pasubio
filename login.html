@@ -61,7 +61,7 @@
 
             <div class="formulario-login">
                     <h2>Log in</h2>
-                <form action="" method="GET">
+                <form action="" id="login" method="GET">
                     <div class="campo-form">
                         <input type="text" name="nombre" placeholder="Ingresa tu usuario" value="" class="campo-login">
                     </div>
@@ -83,14 +83,15 @@
                         <div>
                         <p id="codigo"> </p>
                         </div>
-                        <span class="changeText">                            
+                        <span class="changeText" id="refreshCaptcha">                            
                             <i class="fa-solid fa-arrows-rotate"></i>
                         </span>
                         
                     </div>
                     <div class="userInput">
                         <input id="userCaptcha" type="text" placeholder="Type the text here" >
-                        <button type="submit" class="btn">Submit</button>
+                        <button type="submit" class="btn" id="submitCaptcha">Submit</button>
+
                     </div>
                 </div>
             </div>
