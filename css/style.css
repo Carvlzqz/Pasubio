@@ -1,4 +1,10 @@
-div, header, main, footer, nav, body{
+/* MOBILE FIRST */
+div,
+header,
+main,
+footer,
+nav,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +12,7 @@ div, header, main, footer, nav, body{
 
 .encabezado {
   height: 12.5rem;
-  display: flex;
+  display: inline-flexbox;
   justify-content: center;
   overflow-x: hidden;
 }
@@ -17,6 +23,7 @@ div, header, main, footer, nav, body{
 
 .nav-bar {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   font-size: 1.25rem;
   padding: 1.25rem;
@@ -42,11 +49,13 @@ div, header, main, footer, nav, body{
 }
 
 .contenedor {
+  margin-top: 1.25rem;
   margin-left: 1.875rem;
   margin-right: 1.25rem;
-  height: 37.5rem;
+  height: 56rem;
   width: 95%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 1.5625rem;
 }
@@ -68,10 +77,8 @@ div, header, main, footer, nav, body{
   text-decoration: none;
   font-weight: bolder;
   font-size: 1.875rem;
-  margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
-  width: 100%;
-  height: auto;
+  width: 95%;
+  height: 33%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -166,13 +173,18 @@ form {
   font-size: 0.8em;
 }
 /* Incia la Main pagina de Tablas*/
+
+.catalogo-ropa,
+.catalogo-accesorios,
 .catalogo-tablas {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   object-fit: scale-down;
-  width: 100%;
+  width: fit-content;
   justify-content: center;
 }
+
 .imagenes-catalogo {
   width: 18.75rem;
   height: 18.75rem;
@@ -181,10 +193,14 @@ form {
   margin-top: 1.25rem;
   width: 25rem;
   height: 31.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* tabla con las especificaciones de las tablas de surf*/
+
 table {
-  width: 50%;
+  width: 80%;
   border-collapse: collapse;
   margin-bottom: 6.25rem;
   margin-top: 3.125rem;
@@ -199,23 +215,17 @@ td {
   height: 3.75em;
 }
 
-td li {
-  text-align: start;
+td li,
+h3,
+h1 {
+  text-align: center;
 }
 ul {
   max-width: 80%;
 }
 
 /* Incia la Main pagina de Indumentaria*/
-.catalogo-ropa {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  object-fit: scale-down;
-  width: 80%;
-  width: fit-content;
-  justify-content: center;
-}
+
 .imagenes-catalogo-ropa {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -224,13 +234,7 @@ ul {
   gap: 1.25rem;
 }
 /* Incia la Main pagina de Accesorios*/
-.catalogo-accesorios {
-  display: flex;
-  flex-wrap: wrap;
-  object-fit: scale-down;
-  width: 80%;
-  width: fit-content;
-}
+
 .imagenes-catalogo-accesorios {
   width: 12.5rem;
   height: 12.5rem;
@@ -247,23 +251,24 @@ ul {
 
 .body-login {
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
 .contenedor-form {
-  border: 3px solid rgb(28, 40, 202);
-  border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 40px;
   width: 70%;
   height: 70%;
   display: flex;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-login {
-  height: 100%;
   border-radius: 5px;
+  width: 100%;
 }
 
 .formulario-login {
@@ -271,13 +276,14 @@ ul {
   height: auto;
   display: flex;
   flex-direction: column;
+
   align-items: center;
 }
 .formulario-login h2 {
   font-family: "Smooch", cursive;
   font-size: 65px;
   color: #123cb0;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .formulario-login a {
@@ -315,7 +321,7 @@ ul {
 
 /*CAPTCHA ESTILO*/
 
-.captcha-container{
+.captcha-container {
   display: flex;
   flex-direction: column;
   height: 20%;
@@ -325,54 +331,54 @@ ul {
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header-captcha{
+.header-captcha {
   background-color: #2e4dd7;
   border-radius: 15px 15px 0 0;
   text-align: center;
   color: white;
   font-weight: 700;
-  padding: .1875rem;
+  padding: 0.1875rem;
 }
-.fail{
+.fail {
   background-color: crimson;
 }
-.success{
+.success {
   background-color: greenyellow;
 }
 
-.securityCode{
+.securityCode {
   display: flex;
   justify-content: space-between;
   width: 100%;
   text-align: center;
-  padding: .625rem;
+  padding: 0.625rem;
   background-color: white;
-  border: .0625rem solid gray;
+  border: 0.0625rem solid gray;
   position: relative;
-  letter-spacing: .125rem;
+  letter-spacing: 0.125rem;
 }
 .securityCode p {
   font-size: 1.25rem;
 }
 
-.fa-solid{
+.fa-solid {
   font-size: 1.25rem;
 }
 
-.fa-solid:hover{
+.fa-solid:hover {
   color: rgb(32, 198, 32);
   font-weight: bolder;
   cursor: pointer;
 }
 
-.userInput{
+.userInput {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 5px;
 }
 
-.userInput input{
+.userInput input {
   border-radius: 10px 0 0 10px;
   outline: none;
   border: 1px solid gray;
@@ -380,7 +386,7 @@ ul {
   text-align: center;
 }
 
-.userInput .btn{
+.userInput .btn {
   border-radius: 0 10px 10px 0;
   border: 1px solid gray;
   padding: 3px;
@@ -388,4 +394,36 @@ ul {
   color: white;
   font-weight: 700;
   cursor: pointer;
+}
+@media only screen and (min-width: 600px) {
+  /* DESKTOP */
+  .catalogo-tablas,
+  .catalogo-ropa,
+  .catalogo-accesorios,
+  .nav-bar,
+  .contenedor,
+  .body-login,
+  .contenedor-form {
+    flex-direction: row;
+  }
+  .encabezado {
+    display: flex;
+  }
+  .btnImagen {
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    height: auto;
+  }
+  .contenedor-form {
+    border: 3px solid rgb(28, 40, 202);
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+  .logo-login {
+    height: 100%;
+    width: unset;
+  }
+  .contenedor {
+    height: 37.5rem;
+  }
 }
