@@ -24,7 +24,7 @@ body {
 .nav-bar {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:space-around;
   font-size: 1.25rem;
   padding: 1.25rem;
   background: #757f9a; /* fallback for old browsers */
@@ -39,6 +39,8 @@ body {
     #757f9a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.ocultar{
+  display: none;}
 
 .nav-bar a {
   font-family: "Smooch", cursive;
@@ -59,6 +61,7 @@ body {
   justify-content: center;
   gap: 1.5625rem;
 }
+
 
 /* #region navHome */
 .navTablas {
@@ -425,5 +428,11 @@ ul {
   }
   .contenedor {
     height: 37.5rem;
+  }
+  #menu {
+    display: none;
+  }
+  .ocultar {
+    display: unset;
   }
 }

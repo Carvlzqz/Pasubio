@@ -79,7 +79,8 @@ function createCaptcha() {
 
 function refreshCaptcha() {
   const codigo = document.querySelector("#codigo");
-  codigo.textContent = createCaptcha();
+  if (codigo)
+    codigo.textContent = createCaptcha();
 }
 window.addEventListener("load", refreshCaptcha);
 
@@ -121,3 +122,10 @@ function submitLogin() {
   }
 }
 submitLogin();
+
+/* menu responsive*/
+document.querySelector("#menu").addEventListener("click",toggleMenu)
+
+function toggleMenu() {
+document.querySelector (".nav-bar").classList.toggle("ocultar")
+}
