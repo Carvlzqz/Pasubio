@@ -24,9 +24,13 @@ body {
 .nav-bar {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
   font-size: 1.25rem;
   padding: 1.25rem;
+}
+.colormenu {
+  padding: 0.5rem 0;
+  display: flex;
   background: #757f9a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -39,8 +43,18 @@ body {
     #757f9a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.ocultar{
-  display: none;}
+
+.ocultar {
+  display: none;
+}
+
+#btn-hamburguesa > div {
+  margin-left: 1.25rem;
+  width: 1.5625rem;
+  height: 0.1875rem;
+  background-color: black;
+  margin-bottom: 5px;
+}
 
 .nav-bar a {
   font-family: "Smooch", cursive;
@@ -61,7 +75,6 @@ body {
   justify-content: center;
   gap: 1.5625rem;
 }
-
 
 /* #region navHome */
 .navTablas {
@@ -429,7 +442,7 @@ ul {
   .contenedor {
     height: 37.5rem;
   }
-  #menu {
+  #btn-hamburguesa {
     display: none;
   }
   .ocultar {

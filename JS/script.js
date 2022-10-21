@@ -124,7 +124,7 @@ function submitLogin() {
 submitLogin();
 
 /* menu responsive*/
-document.querySelector("#menu").addEventListener("click",toggleMenu)
+document.querySelector("#btn-hamburguesa").addEventListener("click",toggleMenu)
 
 function toggleMenu() {
 document.querySelector (".nav-bar").classList.toggle("ocultar")

@@ -1,115 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Gauchito Git</title>
-    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Qwitcher+Grypen&family=Smooch&display=swap" rel="stylesheet"/>
-    <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Qwitcher+Grypen&family=Smooch&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6c2885ab71.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <div class="encabezado">
-            <img
-                src="./img/indumentaria-surf.jpg"
-                class="imagenes-encabezado"
-                alt="mujersurfeando"
-            />
+      <div class="encabezado">
+        <img
+          src="./img/indumentaria-surf.jpg"
+          class="imagenes-encabezado"
+          alt="mujersurfeando"
+        />
 
-            <img
-                src="./img/accesorios-de-surf.jpg"
-                class="imagenes-encabezado"
-                alt="mujer caminando en la playa"
-            />
+        <img
+          src="./img/accesorios-de-surf.jpg"
+          class="imagenes-encabezado"
+          alt="mujer caminando en la playa"
+        />
 
-            <img    
-                src="./img/1.png" 
-                class="imagenes-encabezado" 
-                alt="logo" />
+        <img src="./img/1.png" class="imagenes-encabezado" alt="logo" />
 
-            <img
-                src="./img/mejores-tablas-principiantes-de-surf-2020.jpg"
-                class="imagenes-encabezado"
-                alt="tablas de surf"
-            />
+        <img
+          src="./img/mejores-tablas-principiantes-de-surf-2020.jpg"
+          class="imagenes-encabezado"
+          alt="tablas de surf"
+        />
 
-            <img
-                src="./img/surfola.jpg"
-                class="imagenes-encabezado"
-                alt="hombre surfeando"
-            />
-        </div>
+        <img
+          src="./img/surfola.jpg"
+          class="imagenes-encabezado"
+          alt="hombre surfeando"
+        />
+      </div>
     </header>
-    <nav class="nav-bar">
+    <div class="colormenu">
+      <div id="btn-hamburguesa">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav class="nav-bar ocultar">
         <a href="index.html">Home</a>
         <a href="tablas.html">Tablas</a>
         <a href="indumentaria.html">Indumentaria</a>
         <a href="login.html">Login</a>
       </nav>
+    </div>
 
     <div class="body-login">
-        <div class="contenedor-form">
-            <div>
-                <a href="index.html">
-                <img src="./img/1.png" alt="pasubiosurf" class="logo-login">
-                </a>
-            </div>
-
-            <div class="formulario-login">
-                    <h2>Log in</h2>
-                <form action="" id="login" method="GET">
-                    <div class="campo-form">
-                        <input type="text" name="nombre" placeholder="Ingresa tu usuario" value="" class="campo-login">
-                    </div>
-                    <div class="campo-form">
-                        <input type="password" name="password" placeholder="Ingresa tu contraseña" value="" class="campo-login">
-                    </div>
-
-                    <div class="contenedor-botonlogin">
-                        <input type="submit" value="Ingresar" class="boton-login">
-                    </div>
-
-                    <a href="#">Registrarse</a>
-
-                </form>
-
-                <div class="captcha-container">
-                    <div class="header-captcha ">Security Check</div>
-                    <div class="securityCode">
-                        <div>
-                        <p id="codigo"> </p>
-                        </div>
-                        <span class="changeText" id="refreshCaptcha">                            
-                            <i class="fa-solid fa-arrows-rotate"></i>
-                        </span>
-                        
-                    </div>
-                    <div class="userInput">
-                        <input id="userCaptcha" type="text" placeholder="Type the text here" >
-                        <button type="submit" class="btn" id="submitCaptcha">Submit</button>
-
-                    </div>
-                </div>
-            </div>
-            
+      <div class="contenedor-form">
+        <div>
+          <a href="index.html">
+            <img src="./img/1.png" alt="pasubiosurf" class="logo-login" />
+          </a>
         </div>
-        
+
+        <div class="formulario-login">
+          <h2>Log in</h2>
+          <form action="" id="login" method="GET">
+            <div class="campo-form">
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Ingresa tu usuario"
+                value=""
+                class="campo-login"
+              />
+            </div>
+            <div class="campo-form">
+              <input
+                type="password"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                value=""
+                class="campo-login"
+              />
+            </div>
+
+            <div class="contenedor-botonlogin">
+              <input type="submit" value="Ingresar" class="boton-login" />
+            </div>
+
+            <a href="#">Registrarse</a>
+          </form>
+
+          <div class="captcha-container">
+            <div class="header-captcha">Security Check</div>
+            <div class="securityCode">
+              <div>
+                <p id="codigo"></p>
+              </div>
+              <span class="changeText" id="refreshCaptcha">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </span>
+            </div>
+            <div class="userInput">
+              <input
+                id="userCaptcha"
+                type="text"
+                placeholder="Type the text here"
+              />
+              <button type="submit" class="btn" id="submitCaptcha">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>
-        <img
-            src="./img/logotipo-de-instagram.png"
-            class="logo-footer"
-            alt="Instagram"
-        />
-        <img src="./img/whatsapp.png" class="logo-footer" alt="Whatsapp" />
-        <a href="index.html" class="logo-footer"><img src="./img/email.png" class="logo-footer" alt="email"/>
+      <img
+        src="./img/logotipo-de-instagram.png"
+        class="logo-footer"
+        alt="Instagram"
+      />
+      <img src="./img/whatsapp.png" class="logo-footer" alt="Whatsapp" />
+      <a href="index.html" class="logo-footer">
+        <img src="./img/email.png" class="logo-footer" alt="email" />
+      </a>
     </footer>
 
     <script src="./JS/script.js"></script>
-</body>
+  </body>
 </html>
