@@ -194,15 +194,6 @@ function agregarFilaCatalogo(dato, callbackCrearLista) {
   bodyCatalogo.appendChild(fila);
 }
 
-function crearListaApi(arr) {
-  const lista = document.createElement('ul');
-
-  if (Array.isArray(arr) && arr.length > 0) {
-    arr.forEach((elemento) => {
-      const elementoLista = document.createElement('li');
-   return lista;
-  });
-
 function crearListaInput(arr) {
   const lista = document.createElement('ul');
 
@@ -233,7 +224,7 @@ nuevoItem.kilos = inputKilos.value;
 nuevoItem.nivelPrincipiante = inputnivelPrincipiante.value.split(',');
 nuevoItem.nivelIntermedio = parseFloat(inputnivelIntermedio.value);
 nuevoItem.nivelAvanzado = parseFloat(inputnivelAvanzado.value);
-
+}
 
 while (copias > 0) {
   datosCatalogo.push(nuevoItem);
@@ -263,4 +254,7 @@ if (bodyCatalogo) {
     datosCatalogo.length = 0;
     bodyCatalogo.innerHTML = null;
   });
-}
+} 
+  
+
+
