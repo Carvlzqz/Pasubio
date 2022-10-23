@@ -182,88 +182,31 @@
             <th>Nivel Medio</th>
             <th>Nivel Avanzado</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>40kg</td>
-            <td>21 a 23 litros</td>
-            <td>17 a 19 litros</td>
-            <td>14 a 16 litros</td>
-          </tr>
-          <tr>
-            <td>45kg</td>
-            <td>23 a 25 litros</td>
-            <td>19 a 21 litros</td>
-            <td>16 a 17 litros</td>
-          </tr>
-          <tr>
-            <td>50kg</td>
-            <td>25 a 27 litros</td>
-            <td>21 a 23 litros</td>
-            <td>17 a 18 litros</td>
-          </tr>
-          <tr>
-            <td>55kg</td>
-            <td>27 a 29 litros</td>
-            <td>23 a 24 litros</td>
-            <td>18 a 20 litros</td>
-          </tr>
-          <tr>
-            <td>60kg</td>
-            <td>29 a 32 litros</td>
-            <td>24 a 26 litros</td>
-            <td>20 a 22 litros</td>
-          </tr>
-          <tr>
-            <td>65kg</td>
-            <td>32 a 35 litros</td>
-            <td>26 a 28 litros</td>
-            <td>22 a 23 litros</td>
-          </tr>
-          <tr>
-            <td>70kg</td>
-            <td>35 a 40 litros</td>
-            <td>28 a 30 litros</td>
-            <td>23 a 35 litros</td>
-          </tr>
-          <tr>
-            <td>75kg</td>
-            <td>38 a 40 litros</td>
-            <td>30 a 32 litros</td>
-            <td>25 a 26 litros</td>
-          </tr>
-          <tr>
-            <td>80kg</td>
-            <td>40 a 43 litros</td>
-            <td>32 a 34 litros</td>
-            <td>26 a 28 litros</td>
-          </tr>
-          <tr>
-            <td>85kg</td>
-            <td>43 a 46 litros</td>
-            <td>34 a 36 litros</td>
-            <td>28 a 30 litros</td>
-          </tr>
-          <tr>
-            <td>90kg</td>
-            <td>46 a 49 litros</td>
-            <td>36 a 38 litros</td>
-            <td>30 a 32 litros</td>
-          </tr>
-          <tr>
-            <td>95kg</td>
-            <td>49 a 51 litros</td>
-            <td>38 a 40 litros</td>
-            <td>32 a 34 litros</td>
-          </tr>
-          <tr>
-            <td>100kg</td>
-            <td>51 a 54 litros</td>
-            <td>40 a 42 litros</td>
-            <td>34 a 36 litros</td>
-          </tr>
         </tbody>
       </table>
+      <button type="reset" class="btn btnVaciar" id="vaciarCatalogo">Vaciar catalogo</button>
+
+      <form id="formCatalogo">
+        <div class="formInput">
+          <label for="kilos">kilos</label>
+          <input type="text" id="kilos" value="debug">
+        </div>
+        <div class="formInput">
+          <label for="nivelPrincipiante">Nivel Principiante</label>
+          <input type="text" id="nivelPrincipiante" value="21-23 L">
+        </div>
+        <div class="formInput">
+          <label for="nivelMedio">Nivel Medio</label>
+          <input type="text" id="nivelMedio" value="17-19 L">
+        </div>
+        <div class="formInput">
+          <label for="nivelAvanzado">Nivel Avanzado</label>
+          <input type="text" id="nivelAvanzado" value="14-16 L">
+        <div class="flexColRow">
+          <input class="btn btnEnviar" type="button" value="Agregar" id="agregarCatalogo">
+          <input class="btn btnEnviar" type="button" value="x3" id="tripleCatalogo">
+        </div>
+      </form>
     </main>
     <footer>
       <img

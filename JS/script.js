@@ -129,3 +129,45 @@ document.querySelector("#btn-hamburguesa").addEventListener("click",toggleMenu)
 function toggleMenu() {
 document.querySelector (".nav-bar").classList.toggle("ocultar")
 }
+
+/*tabla*/
+const inputKilos= document.querySelector('#kilos');
+const inputnivelPrincipiante= document.querySelector('#nivelPrincipiante');
+const inputnivelIntermedio= document.querySelector('#nivelIntermedio');
+const inputnivelAvanzado= document.querySelector('#nivelAvanzado');
+
+nuevoItem.kilos = inputKilos.value;
+nuevoItem.nivelPrincipiante = inputnivelPrincipiante.value.split(',');
+nuevoItem.nivelIntermedio = parseFloat(inputnivelIntermedio.value);
+nuevoItem.nivelAvanzado = parseFloat(inputnivelAvanzado.value);
+
+
+while (copias > 0) {
+  datosCatalogo.push(nuevoItem);
+  agregarFilaCatalogo(nuevoItem, crearListaInput);
+  copias--;
+}
+resetearFormCatalogo();
+
+function resetearFormCatalogo() {
+const form = document.querySelector('#formCatalogo');
+form.reset();
+}
+if (bodyCatalogo) {
+  cargarCatalogo();
+
+  btnAgregarCatalogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    nuevoItemCatalogo();
+  });
+
+  btnTripleCatalogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    nuevoItemCatalogo(3);
+  });
+
+  btnVaciarCatalogo.addEventListener('click', () => {
+    datosCatalogo.length = 0;
+    bodyCatalogo.innerHTML = null;
+  });
+}
