@@ -1,0 +1,33 @@
+[
+    {
+      "Kilos": "40kg",
+      "Nivel Principiante": 21,
+      "Nivel Intermedio": 18,
+      "Nivel Avanzado": 15
+    },
+    {
+      "Kilos": "45kg",
+      "Nivel Principiante":24,
+      "Nivel Intermedio": 20,
+      "Nivel Avanzado": 17
+    },
+    {
+      "Kilos": "50kg",
+      "Nivel Principiante":26,
+      "Nivel Intermedio": 22,
+      "Nivel Avanzado": 18
+    },
+    {
+      "Kilos": "55kg",
+      "Nivel Principiante":28,
+      "Nivel Intermedio": 22,
+      "Nivel Avanzado": 19
+    },
+    {
+      "Kilos": "60kg",
+      "Nivel Principiante":31,
+      "Nivel Intermedio": 27,
+      "Nivel Avanzado": 21
+    }
+  ]
+  

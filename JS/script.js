@@ -123,6 +123,14 @@ function submitLogin() {
 }
 submitLogin();
 
+ // Variables del Catalogo
+ const bodyCatalogo = document.querySelector('#contenidoCatalogo');
+ const datosCatalogo = [];
+ const btnAgregarCatalogo = document.querySelector('#agregarCatalogo');
+ const btnTripleCatalogo = document.querySelector('#tripleCatalogo');
+ const btnVaciarCatalogo = document.querySelector('#vaciarCatalogo');
+ //
+
 /* menu responsive*/
 document.querySelector("#btn-hamburguesa").addEventListener("click",toggleMenu)
 
@@ -131,6 +139,91 @@ document.querySelector (".nav-bar").classList.toggle("ocultar")
 }
 
 /*tabla*/
+function toggleBotonRegistro(deshabilitado) {
+  btnRegistrar.disabled = deshabilitado;
+}
+
+async function cargarCatalogo() {
+  await precargarCatalogo();
+  llenarCatalogo(datosCatalogo);
+}
+
+async function precargarCatalogo() {
+  return await fetch('./datosTabla.json')
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      pegarCatalogo(data);
+    });
+}
+
+function pegarCatalogo(arr) {
+  if (Array.isArray(arr) && arr.length > 0) {
+    arr.forEach((elemento) => {
+      datosCatalogo.push(elemento);
+    });
+  }
+}
+
+function llenarCatalogo(datos) {
+  if (Array.isArray(datos) && datos.length > 0) {
+    datos.forEach((dato) => {
+      agregarFilaCatalogo(dato, crearListaApi);
+    });
+  }
+}
+
+function agregarFilaCatalogo(dato, callbackCrearLista) {
+  const fila = document.createElement('tr');
+
+  const kilos = document.createElement('td');
+  const nivelPrincipiante = document.createElement('td');
+  const nivelIntermedio = document.createElement('td');
+  const nivelAvanzado = document.createElement('td');
+
+  kilos.innerText = dato.kilos;
+  nivelIntermedio.innerText = dato.nivelIntermedio;
+  nivelAvanzado.innerText = dato.nivelAvanzado;
+
+  fila.appendChild(kilos);
+  fila.appendChild(nivelPrincipiante);
+  fila.appendChild(nivelIntermedio);
+  fila.appendChild(nivelAvanzado);
+
+  bodyCatalogo.appendChild(fila);
+}
+
+function crearListaApi(arr) {
+  const lista = document.createElement('ul');
+
+  if (Array.isArray(arr) && arr.length > 0) {
+    arr.forEach((elemento) => {
+      const elementoLista = document.createElement('li');
+   return lista;
+  });
+
+function crearListaInput(arr) {
+  const lista = document.createElement('ul');
+
+  if (Array.isArray(arr) && arr.length > 0) {
+    arr.forEach((elemento) => {
+      const elementoLista = document.createElement('li');
+      elementoLista.innerText = elemento;
+      lista.appendChild(elementoLista);
+    });
+
+    return lista;
+  }
+}
+
+function nuevoItemCatalogo(copias = 1) {
+  const nuevoItem = {
+    kilos: '',
+    nivelPrincipiante:0,
+    nivelIntermedio: 0,
+    nivelAvanzado: 0,
+  };
 const inputKilos= document.querySelector('#kilos');
 const inputnivelPrincipiante= document.querySelector('#nivelPrincipiante');
 const inputnivelIntermedio= document.querySelector('#nivelIntermedio');
