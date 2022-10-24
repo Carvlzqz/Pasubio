@@ -1,33 +1,33 @@
 [
     {
-      "Kilos": "40kg",
-      "Nivel Principiante": 21,
-      "Nivel Intermedio": 18,
-      "Nivel Avanzado": 15
+      "PesoKg": "40",
+      "nivelPrincipiante": {"min":21, "max":23},
+      "nivelIntermedio": {"min":17, "max":19},
+      "nivelAvanzado": {"min":14, "max":16}
     },
     {
-      "Kilos": "45kg",
-      "Nivel Principiante":24,
-      "Nivel Intermedio": 20,
-      "Nivel Avanzado": 17
+      "PesoKg": "45",
+      "nivelPrincipiante": {"min":23, "max":25},
+      "nivelIntermedio": {"min":19, "max":21},
+      "nivelAvanzado": {"min":16, "max":17}
     },
     {
-      "Kilos": "50kg",
-      "Nivel Principiante":26,
-      "Nivel Intermedio": 22,
-      "Nivel Avanzado": 18
+      "PesoKg": "50",
+      "nivelPrincipiante": {"min":25, "max":27},
+      "nivelIntermedio": {"min":21, "max":23},
+      "nivelAvanzado": {"min":17, "max":18}
     },
     {
-      "Kilos": "55kg",
-      "Nivel Principiante":28,
-      "Nivel Intermedio": 22,
-      "Nivel Avanzado": 19
+      "PesoKg": "55",
+      "nivelPrincipiante": {"min":27, "max":29},
+      "nivelIntermedio": {"min":23, "max":24},
+      "nivelAvanzado": {"min":18, "max":20}
     },
     {
-      "Kilos": "60kg",
-      "Nivel Principiante":31,
-      "Nivel Intermedio": 27,
-      "Nivel Avanzado": 21
+      "PesoKg": "60",
+      "nivelPrincipiante": {"min":29, "max":32},
+      "nivelIntermedio": {"min":26, "max":28},
+      "nivelAvanzado": {"min":22, "max":23}
     }
   ]
   

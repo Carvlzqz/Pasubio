@@ -123,13 +123,7 @@ function submitLogin() {
 }
 submitLogin();
 
- // Variables del Catalogo
- const bodyCatalogo = document.querySelector('#contenidoCatalogo');
- const datosCatalogo = [];
- const btnAgregarCatalogo = document.querySelector('#agregarCatalogo');
- const btnTripleCatalogo = document.querySelector('#tripleCatalogo');
- const btnVaciarCatalogo = document.querySelector('#vaciarCatalogo');
- //
+ 
 
 /* menu responsive*/
 document.querySelector("#btn-hamburguesa").addEventListener("click",toggleMenu)
@@ -139,6 +133,14 @@ document.querySelector (".nav-bar").classList.toggle("ocultar")
 }
 
 /*tabla*/
+
+ // Variables del Catalogo//
+ const tablasCatalogo = document.querySelector('#tablasCatalogo');
+ const datosCatalogo = [];
+ const btnAgregarCatalogo = document.querySelector('#agregarCatalogo');
+ const btnTripleCatalogo = document.querySelector('#tripleCatalogo');
+ const btnVaciarCatalogo = document.querySelector('#vaciarCatalogo');
+
 function toggleBotonRegistro(deshabilitado) {
   btnRegistrar.disabled = deshabilitado;
 }
@@ -169,12 +171,13 @@ function pegarCatalogo(arr) {
 function llenarCatalogo(datos) {
   if (Array.isArray(datos) && datos.length > 0) {
     datos.forEach((dato) => {
-      agregarFilaCatalogo(dato, crearListaApi);
+      agregarFilaCatalogo(dato);
     });
   }
 }
 
-function agregarFilaCatalogo(dato, callbackCrearLista) {
+
+function agregarFilaCatalogo(dato) {
   const fila = document.createElement('tr');
 
   const kilos = document.createElement('td');
@@ -182,62 +185,52 @@ function agregarFilaCatalogo(dato, callbackCrearLista) {
   const nivelIntermedio = document.createElement('td');
   const nivelAvanzado = document.createElement('td');
 
-  kilos.innerText = dato.kilos;
-  nivelIntermedio.innerText = dato.nivelIntermedio;
-  nivelAvanzado.innerText = dato.nivelAvanzado;
+  kilos.innerText = dato.PesoKg + " kg"
+  nivelPrincipiante.innerText= dato.nivelPrincipiante.min + " a " + dato.nivelPrincipiante.max + " litros";
+  nivelIntermedio.innerText = dato.nivelIntermedio.min + " a " + dato.nivelIntermedio.max + " litros";
+  nivelAvanzado.innerText = dato.nivelAvanzado.min + " a " + dato.nivelAvanzado.max + " litros";
 
   fila.appendChild(kilos);
   fila.appendChild(nivelPrincipiante);
   fila.appendChild(nivelIntermedio);
   fila.appendChild(nivelAvanzado);
 
-  bodyCatalogo.appendChild(fila);
+  tablasCatalogo.appendChild(fila);
 }
 
-function crearListaInput(arr) {
-  const lista = document.createElement('ul');
-
-  if (Array.isArray(arr) && arr.length > 0) {
-    arr.forEach((elemento) => {
-      const elementoLista = document.createElement('li');
-      elementoLista.innerText = elemento;
-      lista.appendChild(elementoLista);
-    });
-
-    return lista;
-  }
-}
 
 function nuevoItemCatalogo(copias = 1) {
   const nuevoItem = {
-    kilos: '',
-    nivelPrincipiante:0,
-    nivelIntermedio: 0,
-    nivelAvanzado: 0,
+    "PesoKg": "",
+    "nivelPrincipiante": {"min":0, "max":0},
+    "nivelIntermedio": {"min":0, "max":0},
+    "nivelAvanzado": {"min":0, "max":0}
   };
 const inputKilos= document.querySelector('#kilos');
 const inputnivelPrincipiante= document.querySelector('#nivelPrincipiante');
 const inputnivelIntermedio= document.querySelector('#nivelIntermedio');
 const inputnivelAvanzado= document.querySelector('#nivelAvanzado');
 
-nuevoItem.kilos = inputKilos.value;
-nuevoItem.nivelPrincipiante = inputnivelPrincipiante.value.split(',');
-nuevoItem.nivelIntermedio = parseFloat(inputnivelIntermedio.value);
-nuevoItem.nivelAvanzado = parseFloat(inputnivelAvanzado.value);
-}
+nuevoItem.PesoKg = inputKilos.value;
+nuevoItem.nivelPrincipiante.min= inputnivelPrincipiante.value.split( "," )[0]
+nuevoItem.nivelPrincipiante.max=inputnivelPrincipiante.value.split( "," )[1]
+nuevoItem.nivelIntermedio.min=inputnivelIntermedio.value.split( "," )[0]
+nuevoItem.nivelIntermedio.max=inputnivelIntermedio.value.split( "," )[1]
+nuevoItem.nivelAvanzado.min=inputnivelAvanzado.value.split( "," )[0]
+nuevoItem.nivelAvanzado.max=inputnivelAvanzado.value.split( "," )[1]
 
 while (copias > 0) {
   datosCatalogo.push(nuevoItem);
-  agregarFilaCatalogo(nuevoItem, crearListaInput);
+  agregarFilaCatalogo(nuevoItem);
   copias--;
 }
 resetearFormCatalogo();
-
+}
 function resetearFormCatalogo() {
 const form = document.querySelector('#formCatalogo');
 form.reset();
 }
-if (bodyCatalogo) {
+if (tablasCatalogo) {
   cargarCatalogo();
 
   btnAgregarCatalogo.addEventListener('click', (e) => {
@@ -252,7 +245,7 @@ if (bodyCatalogo) {
 
   btnVaciarCatalogo.addEventListener('click', () => {
     datosCatalogo.length = 0;
-    bodyCatalogo.innerHTML = null;
+    tablasCatalogo.innerHTML = null;
   });
 } 
   

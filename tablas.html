@@ -175,6 +175,7 @@
       </ul>
 
       <table>
+        
         <thead>
           <tr>
             <th>Peso</th>
@@ -182,26 +183,27 @@
             <th>Nivel Medio</th>
             <th>Nivel Avanzado</th>
           </tr>
-        </tbody>
+        </thead>
+        <tbody id="tablasCatalogo"></tbody>
       </table>
       <button type="reset" class="btn btnVaciar" id="vaciarCatalogo">Vaciar catalogo</button>
 
       <form id="formCatalogo">
         <div class="formInput">
           <label for="kilos">kilos</label>
-          <input type="text" id="kilos" value="debug">
+          <input type="text" id="kilos" required>
         </div>
         <div class="formInput">
           <label for="nivelPrincipiante">Nivel Principiante</label>
-          <input type="text" id="nivelPrincipiante" value="21-23 L">
+          <input type="text" id="nivelPrincipiante" placeholder="min,max" required>
         </div>
         <div class="formInput">
-          <label for="nivelMedio">Nivel Medio</label>
-          <input type="text" id="nivelMedio" value="17-19 L">
+          <label for="nivelIntermedio">Nivel Inntermedio</label>
+          <input type="text" id="nivelIntermedio" placeholder="min,max" required>
         </div>
         <div class="formInput">
           <label for="nivelAvanzado">Nivel Avanzado</label>
-          <input type="text" id="nivelAvanzado" value="14-16 L">
+          <input type="text" id="nivelAvanzado" placeholder="min,max" required>
         <div class="flexColRow">
           <input class="btn btnEnviar" type="button" value="Agregar" id="agregarCatalogo">
           <input class="btn btnEnviar" type="button" value="x3" id="tripleCatalogo">
