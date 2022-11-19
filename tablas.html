@@ -186,9 +186,10 @@
         </thead>
         <tbody id="tablasCatalogo"></tbody>
       </table>
-      <button type="reset" class="btn btnVaciar" id="vaciarCatalogo">Vaciar catalogo</button>
+      <button type="reset" class="btn btnVaciar" id="vaciarCatalogo" disabled>Vaciar catalogo</button>
 
       <form id="formCatalogo">
+        <input type="text" id="idCategoriaTabla" hidden readonly>
         <div class="formInput">
           <label for="kilos">kilos</label>
           <input type="text" id="kilos" required>
@@ -205,8 +206,8 @@
           <label for="nivelAvanzado">Nivel Avanzado</label>
           <input type="text" id="nivelAvanzado" placeholder="min,max" required>
         <div class="flexColRow">
-          <input class="btn btnEnviar" type="button" value="Agregar" id="agregarCatalogo">
-          <input class="btn btnEnviar" type="button" value="x3" id="tripleCatalogo">
+          <input class="btn btnEnviar" type="submit" value="Enviar" id="agregarCatalogo">
+          <input class="btn btnEnviar" type="submit" value="x3" id="tripleCatalogo">
         </div>
       </form>
     </main>
