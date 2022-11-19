@@ -1,5 +1,5 @@
 "use strict";
-const API_URL = "https://6379318b7419b414df8bbbaa.mockapi.io/categoriaTablas/"
+const API_URL = "https://6379318b7419b414df8bbbaa.mockapi.io/categoriaTablas/";
 function obtenerValoresAleatorios(listaValores) {
   return listaValores[Math.floor(Math.random() * listaValores.length)];
 }
@@ -79,8 +79,7 @@ function createCaptcha() {
 
 function refreshCaptcha() {
   const codigo = document.querySelector("#codigo");
-  if (codigo)
-    codigo.textContent = createCaptcha();
+  if (codigo) codigo.textContent = createCaptcha();
 }
 window.addEventListener("load", refreshCaptcha);
 
@@ -123,23 +122,23 @@ function submitLogin() {
 }
 submitLogin();
 
- 
-
 /* menu responsive*/
-document.querySelector("#btn-hamburguesa").addEventListener("click",toggleMenu)
+document
+  .querySelector("#btn-hamburguesa")
+  .addEventListener("click", toggleMenu);
 
 function toggleMenu() {
-document.querySelector (".nav-bar").classList.toggle("ocultar")
+  document.querySelector(".nav-bar").classList.toggle("ocultar");
 }
 
 /*tabla*/
 
- // Variables del Catalogo//
- const tablasCatalogo = document.querySelector('#tablasCatalogo');
- let datosCatalogo = [];
- const btnAgregarCatalogo = document.querySelector('#agregarCatalogo');
- const btnTripleCatalogo = document.querySelector('#tripleCatalogo');
- const btnVaciarCatalogo = document.querySelector('#vaciarCatalogo');
+// Variables del Catalogo//
+const tablasCatalogo = document.querySelector("#tablasCatalogo");
+let datosCatalogo = [];
+const btnAgregarCatalogo = document.querySelector("#agregarCatalogo");
+const btnTripleCatalogo = document.querySelector("#tripleCatalogo");
+const btnVaciarCatalogo = document.querySelector("#vaciarCatalogo");
 
 function toggleBotonRegistro(deshabilitado) {
   btnRegistrar.disabled = deshabilitado;
@@ -178,125 +177,132 @@ function llenarCatalogo(datos) {
   }
 }
 
-
 function agregarFilaCatalogo(dato) {
-  const fila = document.createElement('tr');
+  const fila = document.createElement("tr");
 
-  const kilos = document.createElement('td');
-  const nivelPrincipiante = document.createElement('td');
-  const nivelIntermedio = document.createElement('td');
-  const nivelAvanzado = document.createElement('td');
-  const botones = document.createElement('td');
+  const kilos = document.createElement("td");
+  const nivelPrincipiante = document.createElement("td");
+  const nivelIntermedio = document.createElement("td");
+  const nivelAvanzado = document.createElement("td");
+  const botones = document.createElement("td");
 
-  kilos.innerText = dato.PesoKg + " kg"
-  nivelPrincipiante.innerText= dato.nivelPrincipiante.min + " a " + dato.nivelPrincipiante.max + " litros";
-  nivelIntermedio.innerText = dato.nivelIntermedio.min + " a " + dato.nivelIntermedio.max + " litros";
-  nivelAvanzado.innerText = dato.nivelAvanzado.min + " a " + dato.nivelAvanzado.max + " litros";
-  botones.appendChild(crearBtnEditarFila(dato.id))
-  botones.appendChild(crearBtnEliminarFila(dato.id))
+  kilos.innerText = dato.PesoKg + " kg";
+  nivelPrincipiante.innerText =
+    dato.nivelPrincipiante.min + " a " + dato.nivelPrincipiante.max + " litros";
+  nivelIntermedio.innerText =
+    dato.nivelIntermedio.min + " a " + dato.nivelIntermedio.max + " litros";
+  nivelAvanzado.innerText =
+    dato.nivelAvanzado.min + " a " + dato.nivelAvanzado.max + " litros";
+  botones.appendChild(crearBtnEditarFila(dato.id));
+  botones.appendChild(crearBtnEliminarFila(dato.id));
 
   fila.appendChild(kilos);
   fila.appendChild(nivelPrincipiante);
   fila.appendChild(nivelIntermedio);
   fila.appendChild(nivelAvanzado);
-  fila.appendChild(botones)
+  fila.appendChild(botones);
 
   tablasCatalogo.appendChild(fila);
 }
 
-function crearBtnEditarFila(id){
-  const btn = document.createElement('button');
+function crearBtnEditarFila(id) {
+  const btn = document.createElement("button");
   btn.dataset.id = id;
-  btn.addEventListener("click", cargarFormularioParaEditar)
+  btn.addEventListener("click", cargarFormularioParaEditar);
   btn.innerText = "Editar";
-  return btn
+  return btn;
 }
 
-async function cargarFormularioParaEditar(event){
-  const btn = event.target
-  const data = await buscarPorId(btn.dataset.id)
-  console.log(data)
+async function cargarFormularioParaEditar(event) {
+  const btn = event.target;
+  const data = await buscarPorId(btn.dataset.id);
+  console.log(data);
 
-  const inputIdCategoriaTabla = document.querySelector("input#idCategoriaTabla")
-  const inputKilos = document.querySelector('#kilos');
-  const inputnivelPrincipiante = document.querySelector('#nivelPrincipiante');
-  const inputnivelIntermedio = document.querySelector('#nivelIntermedio');
-  const inputnivelAvanzado = document.querySelector('#nivelAvanzado');
+  const inputIdCategoriaTabla = document.querySelector(
+    "input#idCategoriaTabla"
+  );
+  const inputKilos = document.querySelector("#kilos");
+  const inputnivelPrincipiante = document.querySelector("#nivelPrincipiante");
+  const inputnivelIntermedio = document.querySelector("#nivelIntermedio");
+  const inputnivelAvanzado = document.querySelector("#nivelAvanzado");
 
-  inputIdCategoriaTabla.value = data.id
-  inputKilos.value = data.PesoKg
-  inputnivelPrincipiante.value = data.nivelPrincipiante.min + "," + data.nivelPrincipiante.max
-  inputnivelIntermedio.value = data.nivelIntermedio.min + "," + data.nivelIntermedio.max
-  inputnivelAvanzado.value = data.nivelAvanzado.min + "," + data.nivelAvanzado.max
-
+  inputIdCategoriaTabla.value = data.id;
+  inputKilos.value = data.PesoKg;
+  inputnivelPrincipiante.value =
+    data.nivelPrincipiante.min + "," + data.nivelPrincipiante.max;
+  inputnivelIntermedio.value =
+    data.nivelIntermedio.min + "," + data.nivelIntermedio.max;
+  inputnivelAvanzado.value =
+    data.nivelAvanzado.min + "," + data.nivelAvanzado.max;
 }
 
-async function buscarPorId(id){
-  return await fetch(API_URL+id).then(res => res.json())
+async function buscarPorId(id) {
+  return await fetch(API_URL + id).then((res) => res.json());
 }
 
-function crearBtnEliminarFila(id){
-  const btn = document.createElement('button');
+function crearBtnEliminarFila(id) {
+  const btn = document.createElement("button");
   btn.dataset.id = id;
   btn.innerText = "Eliminar";
-  btn.addEventListener("click", eliminarCategoriaTabla)
-  return btn
+  btn.addEventListener("click", eliminarCategoriaTabla);
+  return btn;
 }
 
-async function eliminarCategoriaTabla(event){
-  const btn = event.target
-  const idCategoria = btn.dataset.id
+async function eliminarCategoriaTabla(event) {
+  const btn = event.target;
+  const idCategoria = btn.dataset.id;
   if (idCategoria)
-    await fetch(API_URL+idCategoria, { method: 'DELETE' }).then(cargarCatalogo)
+    await fetch(API_URL + idCategoria, { method: "DELETE" }).then(
+      cargarCatalogo
+    );
 }
 
-async function editarCategoriaTabla(idCategoria){
-  try{
-    const categoriaTabla = getCategoriaTablaFormData()
-    await editarCategoriaTablaApi(idCategoria, categoriaTabla)
+async function editarCategoriaTabla(idCategoria) {
+  try {
+    const categoriaTabla = getCategoriaTablaFormData();
+    await editarCategoriaTablaApi(idCategoria, categoriaTabla);
     cargarCatalogo();
     resetearFormCatalogo();
-  }
-  catch (err){
-    console.error(err)
+  } catch (err) {
+    console.error(err);
   }
 }
 
 async function editarCategoriaTablaApi(id, categoriaTabla) {
   const configuracion = {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(categoriaTabla),
   };
   console.log(configuracion.body);
-  return await fetch(API_URL+id, configuracion).then(cargarCatalogo);
+  return await fetch(API_URL + id, configuracion).then(cargarCatalogo);
 }
 
-
-function getCategoriaTablaFormData(){
-  
+function getCategoriaTablaFormData() {
   const categoriaTabla = {
-    "PesoKg": "",
-    "nivelPrincipiante": {"min":0, "max":0},
-    "nivelIntermedio": {"min":0, "max":0},
-    "nivelAvanzado": {"min":0, "max":0}
+    PesoKg: "",
+    nivelPrincipiante: { min: 0, max: 0 },
+    nivelIntermedio: { min: 0, max: 0 },
+    nivelAvanzado: { min: 0, max: 0 },
   };
-  const inputKilos= document.querySelector('#kilos');
-  const inputnivelPrincipiante= document.querySelector('#nivelPrincipiante');
-  const inputnivelIntermedio= document.querySelector('#nivelIntermedio');
-  const inputnivelAvanzado= document.querySelector('#nivelAvanzado');
+  const inputKilos = document.querySelector("#kilos");
+  const inputnivelPrincipiante = document.querySelector("#nivelPrincipiante");
+  const inputnivelIntermedio = document.querySelector("#nivelIntermedio");
+  const inputnivelAvanzado = document.querySelector("#nivelAvanzado");
 
   categoriaTabla.PesoKg = inputKilos.value;
-  categoriaTabla.nivelPrincipiante.min= inputnivelPrincipiante.value.split( "," )[0]
-  categoriaTabla.nivelPrincipiante.max=inputnivelPrincipiante.value.split( "," )[1]
-  categoriaTabla.nivelIntermedio.min=inputnivelIntermedio.value.split( "," )[0]
-  categoriaTabla.nivelIntermedio.max=inputnivelIntermedio.value.split( "," )[1]
-  categoriaTabla.nivelAvanzado.min=inputnivelAvanzado.value.split( "," )[0]
-  categoriaTabla.nivelAvanzado.max=inputnivelAvanzado.value.split( "," )[1]
+  categoriaTabla.nivelPrincipiante.min =
+    inputnivelPrincipiante.value.split(",")[0];
+  categoriaTabla.nivelPrincipiante.max =
+    inputnivelPrincipiante.value.split(",")[1];
+  categoriaTabla.nivelIntermedio.min = inputnivelIntermedio.value.split(",")[0];
+  categoriaTabla.nivelIntermedio.max = inputnivelIntermedio.value.split(",")[1];
+  categoriaTabla.nivelAvanzado.min = inputnivelAvanzado.value.split(",")[0];
+  categoriaTabla.nivelAvanzado.max = inputnivelAvanzado.value.split(",")[1];
 
-  return categoriaTabla
+  return categoriaTabla;
 }
 
 async function nuevoItemCatalogo(copias = 1) {
@@ -304,7 +310,7 @@ async function nuevoItemCatalogo(copias = 1) {
 
   try {
     while (copias > 0) {
-      await agregarCategoriaTablaApi(nuevoItem)
+      await agregarCategoriaTablaApi(nuevoItem);
       copias--;
     }
     cargarCatalogo();
@@ -316,44 +322,42 @@ async function nuevoItemCatalogo(copias = 1) {
 
 async function agregarCategoriaTablaApi(categoriaTabla) {
   const configuracion = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(categoriaTabla),
   };
-  console.log(configuracion.body)
+  console.log(configuracion.body);
   return await fetch(API_URL, configuracion);
 }
 
 function resetearFormCatalogo() {
-  const form = document.querySelector('#formCatalogo');
+  const form = document.querySelector("#formCatalogo");
   form.reset();
 }
 
 if (tablasCatalogo) {
   cargarCatalogo();
 
-  btnAgregarCatalogo.addEventListener('click', (e) => {
+  btnAgregarCatalogo.addEventListener("click", (e) => {
     e.preventDefault();
-    const idCategoria = document.querySelector("input#idCategoriaTabla")?.value
-    if (idCategoria)
-      editarCategoriaTabla(idCategoria);
-    else
-      nuevoItemCatalogo();
+    const idCategoria = document.querySelector("input#idCategoriaTabla")?.value;
+    if (idCategoria) editarCategoriaTabla(idCategoria);
+    else nuevoItemCatalogo();
   });
 
-  btnTripleCatalogo.addEventListener('click', (e) => {
+  btnTripleCatalogo.addEventListener("click", (e) => {
     e.preventDefault();
     if (!document.querySelector("input#idCategoriaTabla")?.value)
       nuevoItemCatalogo(3);
   });
 
-  btnVaciarCatalogo.addEventListener('click', () => {
+  btnVaciarCatalogo.addEventListener("click", () => {
     datosCatalogo.length = 0;
     tablasCatalogo.innerHTML = null;
   });
-} 
-  
 
-
+  const btnResetCatalogo = document.querySelector("#resetCatalogo");
+  btnResetCatalogo.addEventListener("click", resetearFormCatalogo);
+}
